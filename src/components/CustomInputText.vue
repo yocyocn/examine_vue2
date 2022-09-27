@@ -7,9 +7,14 @@
 
 <script>
 export default {
-    data: function () {
-        return {
-            text: 'hoge'
+    computed: {
+        text: {
+            get() {
+                return this.$store.getters.text
+            },
+            set(value) {
+                this.$store.dispatch("setTextAction", value);
+            }
         }
     }
 }

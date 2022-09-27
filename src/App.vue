@@ -2,6 +2,7 @@
     <div>
         <custom-textarea></custom-textarea>
         <custom-input-text></custom-input-text>
+        {{getHoge}}
     </div>
 </template>
   
@@ -14,7 +15,15 @@ export default {
     components: {
         'custom-textarea': CustomTextarea,
         'custom-input-text': CustomInputText
-    }    
+    },
+    computed: {
+        getHoge () {
+            return this.$store.state.text
+        },
+        showHoge() {
+            return this.$store.getters.text
+        }
+    }
 }
 
 </script>
