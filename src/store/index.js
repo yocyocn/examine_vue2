@@ -5,18 +5,26 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-        text: 'hoge'
+        label: 'foo',
+        text: 'bar'
     },
     getters: {
+        label: state => state.label,
         text: state => state.text,
     },
     mutations: {
+        setLabel(state, newLabel) {
+            state.label = newLabel
+        },
         setText(state, newText) {
             state.text = newText
         },
     },
     actions: {
-        setTextAction({ commit }, newText) {
+        setLabelAsync({ commit }, newLabel) {
+            commit('setLabel', newLabel)
+        },
+        setTextAsync({ commit }, newText) {
             commit('setText', newText)
         },
     }

@@ -2,7 +2,6 @@
     <div>
         <textarea v-model="text">
         </textarea>
-        {{text}}
     </div>
 </template>
 
@@ -14,7 +13,7 @@ export default {
                 return this.$store.getters.text
             },
             set(value) {
-                this.$store.dispatch("setTextAction", value);
+                this.$store.dispatch("setTextAsync", value);
             }
         }
     }

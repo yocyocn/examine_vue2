@@ -1,19 +1,18 @@
 <template>
     <div>
-        <input v-model="text">
-        {{text}}
+        <input v-model="label">
     </div>
 </template>
 
 <script>
 export default {
     computed: {
-        text: {
+        label: {
             get() {
-                return this.$store.getters.text
+                return this.$store.getters.label
             },
             set(value) {
-                this.$store.dispatch("setTextAction", value);
+                this.$store.dispatch("setLabelAsync", value);
             }
         }
     }
